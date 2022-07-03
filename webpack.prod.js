@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 const common = require('./webpack.common')
 const { merge } = require('webpack-merge')
@@ -35,8 +36,8 @@ module.exports = merge(common, {
     }),
     new HtmlWebpackPlugin({
       template: 'template.prod.html',
-      favicon: './src/assets/images/favicon.png'
     }),
     new CleanWebpackPlugin(),
+    new FaviconsWebpackPlugin('src/assets/images/logo-512x512.png')
   ]
 })

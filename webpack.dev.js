@@ -2,6 +2,7 @@ const path = require('path')
 
 const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 const common = require('./webpack.common')
 const { merge } = require('webpack-merge')
@@ -32,7 +33,7 @@ module.exports = merge(common, {
     }),
     new HtmlWebpackPlugin({
       template: 'template.dev.html',
-      favicon: './src/assets/images/favicon.png'
-    })
+    }),
+    new FaviconsWebpackPlugin('src/assets/images/logo-512x512.png')
   ]
 })
