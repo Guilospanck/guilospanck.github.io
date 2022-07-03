@@ -21,5 +21,5 @@ describe('test', () => {
 export const test = () => {
   cy.visit(`${LOCALHOST}`)
 
-  cy.findByRole('heading', { name: /hello 1/i }).should('exist')
+  cy.findByTitle(/hello\-title/i).should('exist')
 }
