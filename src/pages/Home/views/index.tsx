@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
+import React, { useMemo } from 'react'
 import Typical from 'react-typical'
-import { HomeViewProps, BadgeType, BADGE_INFO, BadgeInfo } from "../types";
+import { HomeViewProps, BadgeType, BadgeInfo } from '../types'
 
 import {
   Container,
@@ -13,9 +13,9 @@ import {
   Badges,
   BadgeContainer
 } from './styles'
+import MeImg from '../../../assets/images/me.jpg'
 
 const CurvesSVG = React.lazy(() => import('../../../assets/images/curves.svg'))
-import MeImg from '../../../assets/images/me.jpg'
 
 const GetSubtitle = () => {
   return (
@@ -39,16 +39,21 @@ const GetSubtitle = () => {
 
 const GetSubtitleMemoized = React.memo(GetSubtitle)
 
-const GetBadge = (badge: BadgeType, onMouseEnterBadge: () => void, onMouseLeaveBadge: () => void, badgeInfo: BadgeInfo) => {
-  const badgeSrc = badgeInfo[badge]?.src
+const GetBadge = (badge: BadgeType, onMouseEnterBadge: (badgeType: BadgeType) => void, onMouseLeaveBadge: (badgeType: BadgeType) => void, badgeInfo: BadgeInfo) => {
+  const currentBadge = badgeInfo[badge]
 
+  const color = currentBadge?.color
+  if (!color) { return }
+
+  const badgeSrc = currentBadge?.src(color)
   if (!badgeSrc) { return }
 
   return (
-    <a href="https://github.com/Guilospanck" target={'_blank'}
-      onMouseEnter={() => onMouseEnterBadge()}
-      onMouseLeave={() => onMouseLeaveBadge()}>
-      <BadgeContainer key={badge} src={badgeSrc} />
+    <a key={badge} title={currentBadge.title}
+      href={currentBadge.href} target={'_blank'}
+      onMouseEnter={() => onMouseEnterBadge(badge)}
+      onMouseLeave={() => onMouseLeaveBadge(badge)} rel="noreferrer">
+      <BadgeContainer src={badgeSrc} />
     </a>
   )
 }
@@ -72,4 +77,4 @@ export const HomeView = ({ viewModel }: HomeViewProps) => {
       </CurvesContainer>
     </Container>
   )
-};
+}

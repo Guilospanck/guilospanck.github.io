@@ -1,26 +1,25 @@
-import { useState } from "react";
-import { BadgeInfo, BADGE_INFO, UseHomeViewModelReturnType } from "../types";
+import { useState } from 'react'
+import { BadgeInfo, BadgeType, BADGE_INFO, DEFAULT_COLOR, HOVER_COLOR, UseHomeViewModelReturnType } from '../types'
 
 export const useHomeViewModel = (): UseHomeViewModelReturnType => {
-  /** Constants */
-  const DEFAULT_COLOR = '2d3134'
-  const HOVER_COLOR = 'bfbdbd'  
-
   /** States */
-  const [badgeInfo, setBadgeInfo] = useState<BadgeInfo>(BADGE_INFO(DEFAULT_COLOR))
+  const [badgeInfo, setBadgeInfo] = useState<BadgeInfo>(BADGE_INFO())
 
-  const onMouseEnterBadge = () => {
-    setBadgeInfo(BADGE_INFO(HOVER_COLOR))
+  const onMouseEnterBadge = (badgeType: BadgeType) => {
+    const badgeCopy = { ...badgeInfo }
+    badgeCopy[badgeType].color = HOVER_COLOR
+    setBadgeInfo(badgeCopy)
   }
 
-  const onMouseLeaveBadge = () => {
-    setBadgeInfo(BADGE_INFO(DEFAULT_COLOR))
+  const onMouseLeaveBadge = (badgeType: BadgeType) => {
+    const badgeCopy = { ...badgeInfo }
+    badgeCopy[badgeType].color = DEFAULT_COLOR
+    setBadgeInfo(badgeCopy)
   }
-
 
   return {
     onMouseEnterBadge,
     onMouseLeaveBadge,
     badgeInfo
   }
-};
+}

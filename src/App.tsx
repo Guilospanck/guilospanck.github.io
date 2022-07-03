@@ -4,7 +4,7 @@ import Loading from './components/Loading'
 
 import { AppRoute } from './Route'
 
-function App() {
+function App () {
   return (
     <RecoilRoot>
       <Suspense fallback={<Loading />}>
