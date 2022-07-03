@@ -5,10 +5,10 @@ export const SUBJECT_TITLE_TEST = 'teste'
 export const SUBJECT_TITLE_TEST_2 = 'teste2'
 
 // !!! Change when uploading it to production !!!
-// export const LOCALHOST = 'http://localhost:3000/'
+export const LOCALHOST = 'http://localhost:3000/'
 
 // development
-export const LOCALHOST = 'https://localhost:3000/'
+// export const LOCALHOST = 'https://localhost:3000/'
 
 describe('test', () => {
 
