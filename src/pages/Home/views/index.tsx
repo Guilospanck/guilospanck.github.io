@@ -49,7 +49,7 @@ const GetBadge = (badge: BadgeType, onMouseEnterBadge: (badgeType: BadgeType) =>
   if (!badgeSrc) { return }
 
   return (
-    <a key={badge} title={currentBadge.title}
+    <a key={badge} title={currentBadge.title} role={'link'}
       href={currentBadge.href} target={'_blank'}
       onMouseEnter={() => onMouseEnterBadge(badge)}
       onMouseLeave={() => onMouseLeaveBadge(badge)} rel="noreferrer">
@@ -60,16 +60,16 @@ const GetBadge = (badge: BadgeType, onMouseEnterBadge: (badgeType: BadgeType) =>
 
 export const HomeView = ({ viewModel }: HomeViewProps) => {
   return (
-    <Container>
-      <PhotoContainer url={MeImg} />
-      <Title>Guilherme Rodrigues</Title>
+    <Container title='container'>
+      <PhotoContainer title='photo-container' url={MeImg} />
+      <Title title='title-name-container'>Guilherme Rodrigues</Title>
       <GetSubtitleMemoized />
       <Badges>
         {
           Object.values(BadgeType).map((badge) => GetBadge(badge as BadgeType, viewModel.onMouseEnterBadge, viewModel.onMouseLeaveBadge, viewModel.badgeInfo))
         }
       </Badges>
-      <EmailContainer>
+      <EmailContainer title='email-container'>
         <Email href="mailto:guilospanck@protonmail.com" target={'_blank'}>guilospanck@protonmail.com</Email>
       </EmailContainer>
       <CurvesContainer>

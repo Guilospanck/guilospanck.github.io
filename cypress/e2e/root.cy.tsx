@@ -18,8 +18,15 @@ describe('test', () => {
 
 })
 
-export const test = () => {
+export const test = () => {  
   cy.visit(`${LOCALHOST}`)
 
-  cy.findByTitle(/hello\-title/i).should('exist')
+  cy.findByTitle(/photo\-container/i).should('exist')
+  cy.findByTitle(/title\-name\-container/i).should('exist')
+  cy.findByTitle(/email\-container/i).should('exist')
+
+  const NUMBER_OF_LINKS = 5
+  cy.findAllByRole('link').then($links => {
+    expect($links.length).to.be.eq(NUMBER_OF_LINKS)
+  })
 }

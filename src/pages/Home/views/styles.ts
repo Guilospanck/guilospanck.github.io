@@ -13,7 +13,7 @@ export const Container = styled.div`
 
   width: 100%;
   height: 100%;
-  gap: 3%;
+  gap: 4%;
 `
 
 type PhotoContainerProps = {
@@ -82,6 +82,16 @@ export const CurvesContainer = styled.footer`
   left: 0;
   right: 0;
   width: 100%;
-  max-height: 200px;
+  max-height: 25%;
   overflow: hidden;
+
+  @media(max-height: 700px) {
+    max-height: 15%;
+  }
+  @media(max-height: 550px) {
+    max-height: 10%;
+  }
+  @media(max-height: 470px) {
+    max-height: 5%;
+  }
 `
