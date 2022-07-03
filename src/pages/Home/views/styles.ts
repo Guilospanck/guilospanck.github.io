@@ -13,6 +13,7 @@ export const Container = styled.div`
 
   width: 100%;
   height: 100%;
+  gap: 3%;
 `
 
 type PhotoContainerProps = {
@@ -33,18 +34,35 @@ export const Title = styled.header`
   font-size: xx-large;
 `
 
-export const Subtitle = styled.span`  
-  
+export const Subtitle = styled.section`  
+  height: 60px;
+`
+
+export const Badges = styled.section`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+
+  width: 100%;
+  height: 14px;
+  gap: 2px;
+`
+
+export const BadgeContainer = styled.img`
+  width: 100px;
+  border-radius: 5px;
+  height: 90%;
 `
 
 export const EmailContainer = styled.section`
-  display: flex;
+  display: flex;  
   justify-content: center;
   align-items: center;
   align-content: center;
   width: 100%;
   height: 30px;
-  gap: 3px
 `
 
 export const Email = styled.a`
@@ -61,20 +79,4 @@ export const CurvesContainer = styled.footer`
   width: 100%;
   max-height: 200px;
   overflow: hidden;
-`
-
-export const Badges = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  width: 100%;
-  height: 25px;
-  gap: 2px;
-`
-
-export const BadgeContainer = styled.img`
-  width: 100px;
-  border-radius: 5px;
-  height: 100%;
 `
