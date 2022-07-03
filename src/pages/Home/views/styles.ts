@@ -54,7 +54,11 @@ export const Badges = styled.section`
 export const BadgeContainer = styled.img`
   width: 100px;
   border-radius: 5px;
-  height: 90%;
+  height: 90%;  
+
+  &:hover {
+    background-color: red;
+  }
 `
 
 export const EmailContainer = styled.section`
