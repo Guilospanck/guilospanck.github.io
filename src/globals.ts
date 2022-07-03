@@ -1,12 +1,15 @@
 import { createGlobalStyle } from 'styled-components'
 
+export const BODY_BG_COLOR = '#000'
 export const TEXT_COLOR_0_7_WHITE = 'hsla(0,0%,100%,0.7)'
+export const CONTENT_BG_COLOR_ALMOST_BLACK = '#1d2226'
+export const BREADCUMB_BG_COLOR = '#2d3134'
+export const BREADCUMB_BG_COLOR_HOVER = '#4f5356'
 
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    padding-top: 90px;
-    padding-bottom: 20px;
+    padding: 0;
     width: 100%;
     height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
