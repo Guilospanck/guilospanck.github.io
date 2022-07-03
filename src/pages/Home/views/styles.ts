@@ -31,11 +31,26 @@ export const PhotoContainer = styled.div<PhotoContainerProps>`
 
 export const Title = styled.header`
   font-size: xx-large;
-  
 `
 
 export const Subtitle = styled.span`  
   
+`
+
+export const EmailContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 30px;
+  gap: 3px
+`
+
+export const Email = styled.a`
+  text-decoration: none;
+  color: ${TEXT_COLOR_0_7_WHITE};
+
 `
 
 export const CurvesContainer = styled.footer`

@@ -7,13 +7,15 @@ import {
   PhotoContainer,
   Title,
   Subtitle,
+  EmailContainer,
+  Email,
   CurvesContainer,
   Badges,
   BadgeContainer
 } from './styles'
 
-import MeImg from '../../../assets/images/me.jpg'
 const CurvesSVG = React.lazy(() => import('../../../assets/images/curves.svg'))
+import MeImg from '../../../assets/images/me.jpg'
 const GithubBadge = "https://img.shields.io/badge/GitHub-100000?color=%232d3134&style=for-the-badge&logo=github&logoColor=hsla(0,0%,100%,0.7)&labelColor=%232d3134"
 const TwitterBadge = "https://img.shields.io/badge/Twitter-1DA1F2?color=%232d3134&style=for-the-badge&logo=twitter&logoColor=hsla(0,0%,100%,0.7)&labelColor=%232d3134"
 const LinkedinBadge = "https://img.shields.io/badge/LinkedIn-0077B5?color=%232d3134&style=for-the-badge&logo=linkedin&logoColor=hsla(0,0%,100%,0.7)&labelColor=%232d3134"
@@ -48,11 +50,14 @@ export const HomeView = ({ viewModel }: HomeViewProps) => {
       <Title>Guilherme Rodrigues</Title>
       <GetSubtitleMemoized />
       <Badges>
-        <a href="https://github.com/Guilospanck" target={'_blank'}><BadgeContainer src={GithubBadge} /></a>        
+        <a href="https://github.com/Guilospanck" target={'_blank'}><BadgeContainer src={GithubBadge} /></a>
         <a href="https://twitter.com/Guilospanck" target={'_blank'}><BadgeContainer src={TwitterBadge} /></a>
-        <a href="https://www.linkedin.com/in/guilhermerpereira/" target={'_blank'}><BadgeContainer src={LinkedinBadge} /></a>        
-        <a href="https://medium.com/@guilospanck" target={'_blank'}><BadgeContainer src={MediumBadge} /></a>        
+        <a href="https://www.linkedin.com/in/guilhermerpereira/" target={'_blank'}><BadgeContainer src={LinkedinBadge} /></a>
+        <a href="https://medium.com/@guilospanck" target={'_blank'}><BadgeContainer src={MediumBadge} /></a>
       </Badges>
+      <EmailContainer>
+        <Email href="mailto:guilospanck@protonmail.com" target={'_blank'}>guilospanck@protonmail.com</Email>
+      </EmailContainer>
       <CurvesContainer>
         <CurvesSVG />
       </CurvesContainer>
