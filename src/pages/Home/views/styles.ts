@@ -22,6 +22,7 @@ type PhotoContainerProps = {
 export const PhotoContainer = styled.div<PhotoContainerProps>`
   width: 200px;
   height: 200px;
+  border: 2px solid ${TEXT_COLOR_0_7_WHITE};
   border-radius: 100px;
   background-image: url(${props => props.url});
   background-size: cover;
